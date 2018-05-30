@@ -4,7 +4,11 @@ language: java
 jdk: oraclejdk8
 
 services:
-- docker
+  - docker
+
+cache:
+  directories:
+  - "$HOME/.m2"
 
 env:
   global:
@@ -15,3 +19,6 @@ addons:
     organization: sybrenapitest-org
     token:
       secure: "$SONAR_TOKEN"
+
+script:
+  - mvn clean install
