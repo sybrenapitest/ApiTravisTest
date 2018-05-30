@@ -1,8 +1,20 @@
 sudo: required
 
 language: java
-
 jdk: oraclejdk8
 
 services:
-  - docker
+- docker
+
+env:
+  global:
+  - secure: M2iQchJBi/Uxb0HT6Iq2Ehvm0pnbZtfuSDtlmBkDvxlCHrkVh9QNrCOqwqx3Pbv3j2c3aPQyvSg3depulDxjD/5hg0G/1EqeXb0hY1Y0aR4++6WVHaMuTRFd8NIbvbP1qFav5UHdecB8KnFiKC77GTdl+/H4PveNma8aVVqXZflBJAwffphX3pUsPOiyGsXaNRLxJdBmNhar+LOOG6NO2Z1zi0A7plEd7zyriQnH7nn/vKjo2lDDAGuwbPXza6yBcCAx9UZfFb2Evm1/vhgfY/EB/nxLNVgB5PIQaSpiiOtkyAgj4t3Nx7jC8mfv70rOu9tBJF8IBZ5Q3D6taFbTi5OnbeMfl5HHCGKVMktwVU2T9eoRPJsOdhKlwhA4UZOLSSKjr6oOEJ56Uag/ViED/xln0Hcl4xS3VJlLw88hfkZNnSOGAZglAo+RTlmfwOU7WIt950jhp5jNCNlWlVftWEcK+gJBAD+QcSVFsT73PYL+K08drFA2T523GiB0ECdLLXFxOwDf1B7sXwnx2j0eMyKLaY8JlUARsU28Xr1xPl5psQSTdtUf8D4SdG7GILYe75AlPT+G2KyUCu+uaL84JOdK7yNN71xAPo3jpisjwMAN+sT4Cw0jYwRflp5JJWNVI7/KjAse0Zh8g4zrBQJGvfQSP+dN8pBtHZQn5etU3Ww=
+
+addons:
+  sonarcloud:
+    organization: sybrenapitest-org
+    token:
+      secure: "$SONAR_TOKEN"
+script:
+- "./mvnw clean install -B"
+- "./mvnw clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar"
