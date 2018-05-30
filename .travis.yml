@@ -15,6 +15,3 @@ addons:
     organization: sybrenapitest-org
     token:
       secure: "$SONAR_TOKEN"
-
-script:
-- "./mvnw clean install -B"
