@@ -21,8 +21,10 @@ addons:
     token:
       secure: "eb21f40ecb59f211d58e51d1fea3f4516f73bfbc"
 
-script:
+install:
   - mvn clean install
+
+script:
   - sonar-scanner
 
 after_script:
