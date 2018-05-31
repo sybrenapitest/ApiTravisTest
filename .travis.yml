@@ -25,6 +25,7 @@ addons:
 
 script:
   - mvn clean install
+  - sonar-scanner
 
 after_script:
   - docker login -u $DOCKER_USER -p $DOCKER_PASS
