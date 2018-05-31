@@ -10,11 +10,6 @@ cache:
   directories:
   - "$HOME/.m2"
 
-env:
-  global:
-  - secure: kkxluCTOYrtkeSnawfZwPqI7LN+6BrPz1Bmw1uZlwW/WxYZElMg7NytL0mc95kt5GpBu+oFsDjgND5R0Z5BsiMvfhhG5KoCMlCst6NAAgfSuvfQA3uJ1Kg1XwkebwrecJpjbMQP5IZ79RSsJFUtyAKsmaSBrajz4TfgqyLJq34hz8fbwixELwKSJ/TrGeYJTFDN0S6AqPYG228GqTmIujUCL5oPRI2UZUK33za40gguIlGiGf2EqYvjdvYng8CXhyVVCjgLquzyhCGwfUATVzNVdFdsEmkSiVOZkmXi3i0DK0r4KqhnOFBc02Ttp4qmuokwj3wr07MRgygx9Z2pB/sAdYSYSZDCn0vGl9fWlKVa8Irw657I9gee2m6DDhNxk0AL36jHPZEZVYNPBhiG2UyPy8aL/x4Uzj8TBrSITzyclcNXYjYfMFnITTW6FCnRXBKN1elsIVjHaOtAJOsCs9TY8XXJyU30WkZ4OFSQB8GMEV6TPpnpT+XUkWw+hMgZnaT1JeWwfhQWDfBIaC/sXXcEsRFYW37zfymMDqZzzzs6Sc9AR79Tl4uze/BGK013od/t2XVcQjDSfqYiqAcJWjV5FeT5a+kdkHdc1ALHEYDsSUmK4LsmHOKcATMZBfcEnVUd/rgOQqxe114HE28Ud2fxV1WMDIwp/S30dR/KSwfQ=
-  - secure: pZij9T6xE/7QTloj70rcDfJepxyywkK9CPT9vjkebBuaWQ5Y0rNbW+vb3I5bW90P50f6b4+XpSuoIWXdx50pRCfI3WO2qFeoA2zllUX2qj2Faf2CuNMc9Pw4uiE9EJGit4KtVWo4R0qYnY+aHv/mdEAJEkGMC7a49r0LdpZ3JoR/UcYFCBAv4yJzYf5Nt++Frpe6fMvbxDp9n25bLs2C3pM+KO5GyQ2AVxl3y6BX/AiFZPOoYmfIuWarkxWYn/mz0WfJpfUbmUwxB6FDwAoxmoqs+dUxF6uT/GFATNDyz3qj47tb5DpofX/IMZvmFEAUgGtor+4BXBdiBtQti5+AhjPJ3gGixZNjbiXEFqbdI7TG1jP0cQcY4CdHQdOPLBW1KiV14VpZBpuHg2DK0SFoinxCq7RMpfPQmMPnhw2VKWEHZCQLIEA9nbcynf7MbTkqtEQQaz1TwJ3dZGnpfYJXGUSvbcwacd8+qfzLrSKZ7r1PfiffXwZWp1RfbwhvxowyE7NKccTPSNkhupA1mcP/eVEwKGWaIKmBWCwPh2BVuVpj0sv1r7XcNM6SL1zTvJTKuLI7SWu908BtH21T+HrtfpWcEol+PB1eSoD6VFzWTCFLFMjfArBRuzUD+18Ep80A8FuqnSLyOb6GwCHrJzqS9gF+qGAp/fhQJacgBFg2d5A=
-
 addons:
   sonarcloud:
     organization: sybrenapitest-org
@@ -28,6 +23,6 @@ script:
   - sonar-scanner
 
 after_script:
-  - docker login -u $DOCKER_USER -p $DOCKER_PASS
+  - docker login -u shboland -p .widb-7e3Ndockerhub
   - docker push shboland/api:1.0.0
 
