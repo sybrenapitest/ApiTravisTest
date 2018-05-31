@@ -20,7 +20,7 @@ addons:
   sonarcloud:
     organization: sybrenapitest-org
     token:
-      secure: "$SONAR_TOKEN"
+      secure: "SOMEVAR"
 
 script:
   - mvn clean install
