@@ -12,21 +12,18 @@ cache:
 
 env:
   global:
-    - SONAR_TOKEN=eb21f40ecb59f211d58e51d1fea3f4516f73bfbc
-    - DOCKER_USER=shboland
-    - DOCKER_PASS=.widb-7e3Ndockerhub
 
-addons:
-  sonarcloud:
-    organization: sybrenapitest-org
-    token:
-      secure: $SONAR_TOKEN
+#addons:
+#  sonarcloud:
+#    organization: sybrenapitest-org
+#    token:
+#      secure: $SONAR_TOKEN
 
 install:
   - mvn clean install
 
-script:
-  - sonar-scanner
+#script:
+#  - sonar-scanner
 
 after_script:
   - docker login -u $DOCKER_USER -p $DOCKER_PASS
