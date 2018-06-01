@@ -3,9 +3,6 @@ sudo: required
 language: java
 jdk: oraclejdk8
 
-services:
-  - docker
-
 cache:
   directories:
   - "$HOME/.m2"
@@ -25,7 +22,4 @@ install:
 #script:
 #  - sonar-scanner
 
-after_script:
-  - docker login -u $DOCKER_USER -p $DOCKER_PASS
-  - docker push shboland/api:1.0.0
 
